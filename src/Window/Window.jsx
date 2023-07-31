@@ -1,5 +1,5 @@
 import WindowImg from "../assets/mac-window.png";
-import "./window.css";
+import "./Window.scss";
 
 const Window = () => {
   return (

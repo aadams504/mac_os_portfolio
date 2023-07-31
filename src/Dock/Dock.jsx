@@ -1,4 +1,4 @@
-import "./dock.scss";
+import "./Dock.scss";
 
 const Dock = () => {
   let icons = document.querySelectorAll(".icon");

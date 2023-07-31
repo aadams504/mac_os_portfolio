@@ -7,7 +7,7 @@ import Account from "../assets/account.png";
 import Search from "../assets/search.png";
 import Battery from "../assets/battery.png";
 
-import "./menu.css";
+import "./Menu.scss";
 
 const Menu = () => {
   const currDate = new Date()
