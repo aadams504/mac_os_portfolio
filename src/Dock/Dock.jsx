@@ -151,7 +151,7 @@ const Dock = () => {
           />
         </li>
         <li className="li-bin li-15">
-          <div className="name">Bin</div>
+          <div className="name">Trash</div>
           <img
             className="icon icon-bin"
             src="https://findicons.com/files/icons/569/longhorn_objects/128/trash.png"

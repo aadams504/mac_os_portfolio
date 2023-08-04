@@ -1,0 +1,26 @@
+.folders-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 8rem;
+  height: 6rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  // background-color: blue;
+
+  .folders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .folders p {
+    color: lightgray;
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}

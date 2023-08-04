@@ -1,58 +1,48 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+// import {DndProvider} from 'react-dnd';
+import Folders from "../Folders/Folders";
 import Dock from "../Dock/Dock";
 import Menu from "../Menu/Menu";
-import Folder from "../assets/folder.png";
+import MobileWindow from "../MobileWindow/MobileWindow";
 import Window from "../Window/Window";
-import "./Home.scss";
+import "./home.scss";
 
 const Home = () => {
-  //   const [window, setWindow] = useState(false);
+  const [windowDimension, setWindowDimension] = useState(null);
 
-  const handleClick = (e) => {
-    console.log(e.target);
-    console.log("Image clicked");
-  };
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowDimension <= 725;
 
   return (
     <div className="monitor-container">
-      <div className="monitor-screen">
-        <Menu />
-        <div className="folder-container">
-          <div className="folders" id="folder-1">
-            <img
-              className="folder"
-              id="about"
-              src={Folder}
-              alt="folder"
-              onClick={handleClick}
-            />
-            <p>Personal Docs</p>
-          </div>
-          <div className="folders" id="folder-2">
-            <img
-              className="folder"
-              id="projects"
-              src={Folder}
-              alt="folder"
-              onClick={handleClick}
-            />
-            <p>Projects</p>
-          </div>
-          <div className="folders" id="folder-3">
-            <img
-              className="folder"
-              id="games"
-              src={Folder}
-              alt="folder"
-              onClick={handleClick}
-            />
-            <p>Games</p>
-          </div>
+      {isMobile ? (
+        <div className="monitor-screen">
+          <Menu />
+          <Folders />
+          <MobileWindow />
+          <Dock />
         </div>
-        <Window />
-
-        <Dock />
-      </div>
+      ) : (
+        <div className="monitor-screen">
+          <Menu />
+          <Folders />
+          <Window />
+          <Dock />
+        </div>
+      )}
     </div>
   );
 };

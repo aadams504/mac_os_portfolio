@@ -1,0 +1,15 @@
+.window-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  top: -5rem;
+  // background-color: aqua;
+  justify-content: center;
+
+  .window {
+    width: 30rem;
+    top: 2rem;
+    left: 15rem;
+    // background-color: purple;
+  }
+}
